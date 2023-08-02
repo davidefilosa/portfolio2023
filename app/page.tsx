@@ -59,7 +59,7 @@ const Admin = () => {
 
   return (
     <div>
-      <UserButton afterSignOutUrl="/admin" className="m-4" />
+      <UserButton afterSignOutUrl="/" />
       <div className="w-full flex justify-center items-center">
         <form
           onSubmit={onSubmit}
