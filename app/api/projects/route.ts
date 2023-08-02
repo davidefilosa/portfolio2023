@@ -9,10 +9,6 @@ export async function POST(req: Request) {
 
     const { title, description, imageUrl, url, github } = body;
 
-    if (!userId) {
-      return new NextResponse("Unauthorized", { status: 403 });
-    }
-
     const project = await prismadb.project.create({
       data: { title, description, imageUrl, url, github },
     });
