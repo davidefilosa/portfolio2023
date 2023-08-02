@@ -63,7 +63,7 @@ const Admin = () => {
       <div className="w-full flex justify-center items-center">
         <form
           onSubmit={onSubmit}
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-6"
         >
           <div>
             <label className="block text-gray-700 text-sm font-bold mb-2">
