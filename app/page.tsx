@@ -47,6 +47,7 @@ const Admin = () => {
   const onSubmit = handleSubmit(async (data: any) => {
     try {
       await axios.post("/api/projects", data);
+      toast.success("Project added");
     } catch (error) {
       console.log(error);
     }
@@ -112,7 +113,7 @@ const Admin = () => {
               return (
                 <button
                   onClick={() => open()}
-                  className="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 mb-2"
+                  className="block bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded mt-4 mb-2"
                 >
                   Upload Image
                 </button>
@@ -121,8 +122,9 @@ const Admin = () => {
           </CldUploadWidget>
 
           <input
+            onClick={onSubmit}
             type="submit"
-            className="block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 mb-2"
+            className="block bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded mt-4 mb-2"
           />
         </form>
       </div>
