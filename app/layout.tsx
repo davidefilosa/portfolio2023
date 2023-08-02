@@ -3,17 +3,25 @@ import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const AdminLayout = ({ children }: { children: React.ReactNode }) => {
-  const { userId } = auth();
+import "./globals.css";
 
-  if (!userId) {
-    redirect("/sign-in");
-  }
-  return (
-    <div>
-      <ClerkProvider>{children}</ClerkProvider>
-    </div>
-  );
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Dashboard",
+  description: "E-Commerce Dashboard",
 };
 
-export default AdminLayout;
+export default async function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </ClerkProvider>
+  );
+}
