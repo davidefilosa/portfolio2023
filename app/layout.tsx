@@ -2,6 +2,7 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
 
